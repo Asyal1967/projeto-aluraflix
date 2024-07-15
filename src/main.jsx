@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
+import Home from './pages/Home';
 import 'overlayscrollbars/overlayscrollbars.css';
 import './scss/styles.scss'
 import {
@@ -13,7 +13,7 @@ import PaginaNaoEncontrada from './pages/404';
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element: <Home />,
   },
   {
     path: "*",
