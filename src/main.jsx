@@ -9,11 +9,16 @@ import {
 } from "react-router-dom";
 import { OverlayScrollbarsComponent } from 'overlayscrollbars-react';
 import PaginaNaoEncontrada from './pages/404';
+import NovoVideo from './pages/NovoVideo';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Home />,
+  },
+  {
+    path: "/novo-video",
+    element: <NovoVideo />
   },
   {
     path: "*",
