@@ -1,1 +1,8 @@
 @import "bootstrap/scss/bootstrap";
+
+html, body, #root {
+    height: 100%;
+    & div[data-overlayscrollbars-initialize] {
+        height: 100%;
+    }
+}

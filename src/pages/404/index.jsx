@@ -11,9 +11,9 @@ export default function PaginaNaoEncontrada() {
   );
 
   return (
-    <main className="container">
+    <main className="container d-flex flex-column justify-content-center align-items-center h-100 text-center">
       <h1 className="text-danger display-1">Ops! Essa página não existe X.X</h1>
-      <h2 className='h2 text-danger-emphasis'>Parece que você tentou acessar uma página que não existe nesse aplicativo</h2>
+      <p className='h2 text-danger-emphasis w-75'>Parece que você tentou acessar uma página que não existe nesse aplicativo</p>
       <button
         className='btn btn-outline-primary p-3 mt-5 text-light rounded-3'
         onClick={callbackMemoizadaParaRedirecionarAoHome}
