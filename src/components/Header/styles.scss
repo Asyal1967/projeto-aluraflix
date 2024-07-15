@@ -1,0 +1,8 @@
+header {
+    height: 8vh;
+    border-bottom: 2px solid var(--bs-primary-border-subtle);
+    box-shadow: 0 0.3rem 0.8rem rgba(34, 113, 209, 0.5);
+    & img {
+        height: 2rem;
+    }
+}
