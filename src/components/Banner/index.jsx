@@ -1,19 +1,20 @@
 import Tarja from '../Tarja'
-import './styles.scss'
+import './styles.scss';
+import PropTypes from 'prop-types';
 
-export default function Banner() {
+export default function Banner({ video }) {
   return (
     <section className="d-flex justify-content-center align-items-center banner">
-      <img src="/images/soutinho-banner.png" alt='Capa de vídeo do Dev Soutinho' />
+      <img src={video.imagem} alt={video.titulo} />
       <div className='container-fluid d-flex justify-content-between mt-auto px-5'>
         <div className='banner-esquerda w-50'>
-          <Tarja categoria='Front End' cor='primary' />
-          <h1 className='display-5 fw-normal mt-5'>SEO com React</h1>
-          <p className='fw-lighter'>Eu to aqui pra nesse vídeo dizer que a gente vai aprender a começar uma app inspirada no desenho Pokémon com Nextjs e React, ver algumas dicas sobre performance e de quebra conhecer uma plataforma sensacional pra fazer deploy que é a Vercel. Tudo em 22 minutos nesse vídeo feito com todo o carinho do mundo construindo uma {'"'}Pokedex{'"'}! </p>
+          <Tarja categoria={video.categoria} cor={video.categoria === 'Front end' ? 'primary' : video.categoria === 'Back end' ? 'success' : 'warning'} />
+          <h1 className='display-5 fw-normal mt-5'>{video.titulo}</h1>
+          <p className='fw-lighter'>{video.descricao}</p>
         </div>
         <div className='banner-direita w-50'>
         <iframe
-          src="https://www.youtube.com/embed/c8mVlakBESE"
+          src={video.video.replace('/watch?v=', '/embed/')}
           title="Conhecendo a linguagem Go | Hipsters.Talks"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
@@ -23,3 +24,7 @@ export default function Banner() {
     </section>
   )
 }
+
+Banner.propTypes = {
+  video: PropTypes.object.isRequired
+};

@@ -15,6 +15,9 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Home />,
+    loader: async ({ request }) => {
+      return fetch('http://localhost:3000/videos', { method: 'get', signal: request.signal })
+    }
   },
   {
     path: "/novo-video",

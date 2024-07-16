@@ -8,7 +8,7 @@ const schemaDoFormulario = Yup.object().shape({
     .min(3, "Título deve possuir ao menos 3 caracteres")
     .required("Título é obrigatório"),
   categoria: Yup.string()
-    .oneOf(["frontend", "backend", "mobile"], 'Precisa ser "Front end", "Back end" ou "Mobile"')
+    .oneOf(["Front end", "Back end", "Mobile"], 'Precisa ser "Front end", "Back end" ou "Mobile"')
     .required("Categoria é obrigatório"),
   imagem: Yup.string()
     .url("Link da imagem precisa ser uma URL válida")
@@ -106,9 +106,9 @@ export default function NovoVideo() {
                   <option disabled value="0">
                     Selecione uma categoria
                   </option>
-                  <option value="frontend">Front end</option>
-                  <option value="backend">Back end</option>
-                  <option value="mobile">Mobile</option>
+                  <option value="Front end">Front end</option>
+                  <option value="Back end">Back end</option>
+                  <option value="Mobile">Mobile</option>
                 </select>
                 <div
                   className={`invalid-feedback ${

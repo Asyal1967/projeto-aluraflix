@@ -1,8 +1,11 @@
 import BarraDeNavegacao from '@components/BarraDeNavegacao'
 import Banner from '../../components/Banner';
 import './styles.scss'
+import { useLoaderData } from 'react-router-dom';
 
 function Home() {
+
+  const videos = useLoaderData();
 
   return (
     <>
@@ -10,7 +13,7 @@ function Home() {
       <BarraDeNavegacao />
     </header>
     <main className='container-fluid h-100 px-0'>
-        <Banner />
+        <Banner video={videos[0]} />
     </main>
     </>
   )
