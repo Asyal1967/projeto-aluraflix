@@ -18,7 +18,7 @@ export default function ListaDeCards({ videos, categoria }) {
     <>
       <Tarja categoria={categoria} cor={mapearCorDaTarja(categoria)} tamanho="h4" />
       <br />
-      <div className="container-fluid px-0 d-flex gap-5">
+      <div className="container-fluid px-0 d-flex gap-5 overflow-x-auto">
       {videos
         .filter((video) => video.categoria === categoria)
         .map((video) => (

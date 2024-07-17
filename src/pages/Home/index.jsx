@@ -14,7 +14,7 @@ function Home() {
       </header>
       <main className="container-fluid h-100 px-0">
         {videos && <Banner video={videos[0]} />}
-        <section className="container-fluid px-5">
+        <section className="container-fluid px-xl-5 px-md-5 px-sm-5">
           {videos && (
             <>
             <ListaDeCards videos={videos} categoria='Front end' />
