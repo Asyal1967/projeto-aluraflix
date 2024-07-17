@@ -1,8 +1,13 @@
-# React + Vite
+# Aluraflix
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Como rodar
+Basta clonar o repositório, rodar `npm install` para instalar as dependências e após concluído, rodar `npm run dev` e em outra shell, `npm run server`.
 
-Currently, two official plugins are available:
+## Decisões e dificuldades
+Precisei pedir muita ajuda a conhecidos que trabalham na área para resolver algumas dúvidas e até encontrar soluções para problemas que não conseguia resolver de jeito nenhum. Usei muito o ChatGPT para explicar porque algumas coisas não funcionavam e estratégias para resolver
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## O que faltou
+Infelizmente não consegui implementar tudo e faltou o formulário de editar e a responsividade geral (embora algumas partes já estejam ok, como a página de novo formulário)
+
+## Descobertas
+Acabaei descobrindo algumas bilbiotecas e funcionalidades que não foram abordadas, como pegar dados pela rota, validação de formulário com yup e formik (foi uma dica para economizar tempo com validação em JS)
