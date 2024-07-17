@@ -3,7 +3,7 @@
 .banner {
   position: relative;
   height: 65dvh;
-  margin-top: 8.5vh;
+  margin-top: 5rem;
   width: 100%;
   overflow: hidden;
   & img {
@@ -29,10 +29,9 @@
 .banner-direita {
   margin-bottom: 2rem;
   & iframe {
+    width: 85%;
     aspect-ratio: 16/9;
-    width: 80%;
     float: right;
     border: 2px solid var(--bs-primary-border-subtle);
-    box-shadow: inset 0 0 0.5rem 0.1rem rgba(34, 113, 209, 0.5);
   }
 }

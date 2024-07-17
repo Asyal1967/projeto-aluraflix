@@ -13,12 +13,13 @@ export default function Banner({ video }) {
           <p className='fw-lighter'>{video.descricao}</p>
         </div>
         <div className='banner-direita w-50'>
-        <iframe
-          src={video.video.replace('/watch?v=', '/embed/')}
-          title="Conhecendo a linguagem Go | Hipsters.Talks"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-        ></iframe>
+          <iframe
+            src={video.video.replace('/watch?v=', '/embed/')}
+            title="Conhecendo a linguagem Go | Hipsters.Talks"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            className='rounded-3'
+          ></iframe>
         </div>
       </div>
     </section>
