@@ -2,6 +2,7 @@ import BarraDeNavegacao from "../../components/BarraDeNavegacao";
 import "./styles.scss";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import { useNavigate } from "react-router-dom";
 
 const schemaDoFormulario = Yup.object().shape({
   titulo: Yup.string()
@@ -20,6 +21,8 @@ const schemaDoFormulario = Yup.object().shape({
 });
 
 export default function NovoVideo() {
+  const navegarPara = useNavigate();
+
   const formulario = useFormik({
     initialValues: {
       titulo: "",
@@ -28,8 +31,12 @@ export default function NovoVideo() {
       video: "",
       descricao: "",
     },
-    onSubmit: (dadosDoFormulario) => {
-      console.log(dadosDoFormulario);
+    onSubmit: async (dadosDoFormulario) => {
+      await fetch('http://localhost:3000/videos', {
+        method: 'post',
+        body: JSON.stringify(dadosDoFormulario)
+      });
+      navegarPara('/');
     },
     validationSchema: schemaDoFormulario,
   });
