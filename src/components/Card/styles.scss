@@ -1,0 +1,59 @@
+.cartao-video {
+  width: 25%;
+  max-width: 50rem;
+  border: 4px solid var(--bs-primary-border-subtle);
+  box-shadow: inset 0 0 0.5rem 0.1rem rgba(34, 113, 209, 0.5);
+
+  // demorou um bocado pra achar a solução pra essa borda com sombra:
+  // https://stackoverflow.com/questions/11583947/boxshadow-inset-not-working
+  & .container-imagem {
+    position: relative;
+    &::before {
+      content: " ";
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 250px;
+      z-index: 10;
+      border-bottom: 4px solid var(--bs-primary-border-subtle);
+      box-shadow: inset 0 0 1rem 0.4rem rgba(34, 113, 209, 0.5);
+    }
+    &[categoria="Front end"]::before {
+      border-color: var(--bs-primary-border-subtle);
+      box-shadow: inset 0 0 1rem 0.4rem var(--bs-primary-border-subtle);
+    }
+  
+    &[categoria="Back end"]::before {
+      border-color: var(--bs-success-border-subtle);
+      box-shadow: inset 0 0 1rem 0.4rem var(--bs-success-border-subtle);
+    }
+  
+    &[categoria="Mobile"]::before {
+      border-color: var(--bs-warning-border-subtle);
+      box-shadow: inset 0 0 1rem 0.4rem var(--bs-warning-border-subtle);
+    }
+  }
+
+  & img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+  }
+
+  &[categoria="Front end"] {
+    border-color: var(--bs-primary-border-subtle);
+    box-shadow: inset 0 0 0.5rem 0.1rem var(--bs-primary-border-subtle);
+  }
+
+  &[categoria="Back end"] {
+    border-color: var(--bs-success-border-subtle);
+    box-shadow: inset 0 0 0.5rem 0.1rem var(--bs-success-border-subtle);
+  }
+
+  &[categoria="Mobile"] {
+    border-color: var(--bs-warning-border-subtle);
+    box-shadow: inset 0 0 0.5rem 0.1rem var(--bs-warning-border-subtle);
+  }
+}
