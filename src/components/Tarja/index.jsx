@@ -12,5 +12,5 @@ export default function Tarja({ categoria, cor, tamanho = 'display-6' }) {
 Tarja.propTypes = {
   categoria: PropTypes.string.isRequired,
   cor: PropTypes.string.isRequired,
-  tamanho: PropTypes.number.isRequired
+  tamanho: PropTypes.string
 }
