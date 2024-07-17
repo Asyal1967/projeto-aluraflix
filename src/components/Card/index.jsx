@@ -2,8 +2,16 @@ import './styles.scss'
 import PropTypes from 'prop-types';
 import Lixeira from "../IconeLixeira";
 import Editar from '../IconeEditar';
+import { useNavigate } from 'react-router-dom';
 
 export default function Card({ video }) {
+
+  const navegarPara = useNavigate();
+
+  function removerVideo() {
+    fetch(`http://localhost:3000/videos/${video.id}`, { method: 'delete' })
+      .then(() => navegarPara('/'))
+  }
   return (
     <div className="card cartao-video" {...{ categoria: video.categoria }}>
       <div className="container-imagem" {...{ categoria: video.categoria }}>
@@ -14,7 +22,7 @@ export default function Card({ video }) {
         />
       </div>
       <div className="card-body d-flex justify-content-evenly">
-        <button className="btn">
+        <button className="btn" onClick={removerVideo}>
           <Lixeira className="icone-lixeira me-3" />
           <span className='text-uppercase fw-bold'>Deletar</span>
         </button>

@@ -1,7 +1,7 @@
 .cartao-video {
   background-color: rgba(0,0,0,0.4);
   width: 25%;
-  min-width: 30rem;
+  min-width: 30rem !important;
   max-width: 50rem;
   border: 4px solid var(--bs-primary-border-subtle);
   box-shadow: inset 0 0 0.5rem 0.1rem rgba(34, 113, 209, 0.5);
@@ -23,6 +23,7 @@
       border-bottom: 4px solid var(--bs-primary-border-subtle);
       box-shadow: inset 0 0 1rem 0.4rem rgba(34, 113, 209, 0.5);
     }
+
     &[categoria="Front end"]::before {
       border-color: var(--bs-primary-border-subtle);
       box-shadow: inset 0 0 1rem 0.4rem var(--bs-primary-border-subtle);
@@ -37,13 +38,14 @@
       border-color: var(--bs-warning-border-subtle);
       box-shadow: inset 0 0 1rem 0.4rem var(--bs-warning-border-subtle);
     }
+
+    & img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+    }
   }
 
-  & img {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-  }
 
   &[categoria="Front end"] {
     border-color: var(--bs-primary-border-subtle);
@@ -68,9 +70,9 @@
       &::before {
         height: 170px;
       }
-    }
-    & img {
-      height: 170px;
+      & img {
+        height: 170px;
+      }
     }
   }
 }
